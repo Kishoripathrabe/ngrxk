@@ -14,6 +14,7 @@ channelName:String;
   constructor(private store:Store<{counter:CounterState}>) { }
   ngOnInit(): void {
   this.store.select('counter').subscribe(data=>{
+    console.log("call me text")
     this.channelName = data.channelName;
   })
   }
