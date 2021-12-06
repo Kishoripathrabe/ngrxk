@@ -4,4 +4,4 @@ export const increment = createAction('increment');
 export const decrement = createAction('decrement');
 export const reset = createAction('reset');
 export const custominput = createAction('custominput',props<{value:number}>());
-
+export const textinput = createAction('textinput', props<{ channelName: string }>());

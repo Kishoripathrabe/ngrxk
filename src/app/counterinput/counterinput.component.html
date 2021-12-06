@@ -1,5 +1,11 @@
+<div class="p-4 display-4">{{channelName}}</div>
+
   <input [(ngModel)]="value" class="form-control" id="floatingInput" placeholder="Enter-Custom-Value-Here">
   <br>
+
   <button (click)="onPut()" class="btn btn-warning">
-  Change By Custom Value
+  Change Counter Value
   </button>
+    <button (click)="onSetTitle()" class="btn btn-info">
+      Change Title Value
+    </button>

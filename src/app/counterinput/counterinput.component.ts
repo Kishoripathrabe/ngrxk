@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { custominput } from '../state/counter.actions';
+import { custominput, textinput } from '../state/counter.actions';
 import { CounterState } from '../state/counter.state';
 
 @Component({
@@ -10,10 +10,17 @@ import { CounterState } from '../state/counter.state';
 })
 export class CounterinputComponent implements OnInit {
 value:number=0;
+channelName:String;
   constructor(private store:Store<{counter:CounterState}>) { }
   ngOnInit(): void {
+  this.store.select('counter').subscribe(data=>{
+    this.channelName = data.channelName;
+  })
   }
 onPut(){
   this.store.dispatch(custominput({value:+this.value}))
 }
+onSetTitle(){
+this.store.dispatch(textinput({channelName:'modified_title'}))
+  }
 }

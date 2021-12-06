@@ -9,7 +9,7 @@ import { CounterState } from '../state/counter.state';
   styleUrls: ['./counteroutput.component.css']
 })
 export class CounteroutputComponent implements OnInit {
-  counter =0;
+  counter = 0;
   counter$: Observable<CounterState>;
   constructor(private store: Store<{counter:CounterState}>) { }
 

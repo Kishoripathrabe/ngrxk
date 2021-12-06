@@ -1,6 +1,6 @@
 import { Action, createReducer, on  } from "@ngrx/store";
-import { custominput, decrement, increment, reset } from "./counter.actions";
-import { initialState } from "./counter.state";
+import { custominput, decrement, increment, reset, textinput } from "./counter.actions";
+import { CounterState, initialState } from "./counter.state";
 
 const _counterReducer = createReducer(initialState,
   on(increment,(state)=>{
@@ -15,9 +15,13 @@ const _counterReducer = createReducer(initialState,
   on(custominput, (state,action) => {
     console.log(action);
     return { ...state, counter: action.value }
+  }),
+  on(textinput, (state, action) => {
+    console.log(action);
+    return { ...state, channelName: action.channelName }
   })
 );
 
-export function counterReducer(state: { counter: number; },action: Action){
+export function counterReducer(state: CounterState,action: Action){
   return _counterReducer(state,action);
 }
