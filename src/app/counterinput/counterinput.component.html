@@ -1,4 +1,4 @@
-<div class="p-4 display-4">{{channelName}}</div>
+<div class="p-4 display-4">{{(channelName$ | async)}}</div>
 
   <input [(ngModel)]="value" class="form-control" id="floatingInput" placeholder="Enter-Custom-Value-Here">
   <br>
