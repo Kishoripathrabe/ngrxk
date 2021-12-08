@@ -1,19 +1,7 @@
-<hr>
-<div class="container">
-  <div class="row align-items-start">
-    <div class="col-12 border d-flex justify-content-center  py-5 m-3">
-      <app-counteroutput></app-counteroutput>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 border d-flex justify-content-center py-5 m-3">
-      <app-counterbuttons></app-counterbuttons>
-    </div>
-  </div>
-    <div class="row">
-      <div class="col-12 border d-flex justify-content-center py-5 m-3">
-        <app-counterinput></app-counterinput>
-      </div>
-    </div>
+<app-header></app-header>
 
+<div class="container">
+  <div class="row">
+  <router-outlet></router-outlet>
+</div>
 </div>

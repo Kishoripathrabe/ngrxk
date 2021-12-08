@@ -4,12 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
-import { CounteroutputComponent } from './counteroutput/counteroutput.component';
-import { CounterbuttonsComponent } from './counterbuttons/counterbuttons.component';
+import { CounteroutputComponent } from './counter/counteroutput/counteroutput.component';
+import { CounterbuttonsComponent } from './counter/counterbuttons/counterbuttons.component';
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './state/counter.reducer';
-import { CounterinputComponent } from './counterinput/counterinput.component';
+import { counterReducer } from './counter/state/counter.reducer';
+import { CounterinputComponent } from './counter/counterinput/counterinput.component';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { HomeComponent } from './home/home.component';
+import { PostsListComponent } from './posts/posts-list/posts-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { FormsModule } from '@angular/forms';
     CounterComponent,
     CounteroutputComponent,
     CounterbuttonsComponent,
-    CounterinputComponent
+    CounterinputComponent,
+    HeaderComponent,
+    HomeComponent,
+    PostsListComponent
   ],
 
   imports: [
