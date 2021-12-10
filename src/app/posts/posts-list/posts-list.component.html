@@ -12,6 +12,7 @@
         <th scope="col">Id</th>
         <th scope="col">Title</th>
         <th scope="col">Description</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +20,7 @@
         <td>{{ post.id }}</td>
         <td>{{post.title }}</td>
         <td>{{post.description}}</td>
+        <td><a class="btn btn-warning" [routerLink]="['edit',post.id]">Update</a></td>
       </tr>
     </tbody>
   </table>
