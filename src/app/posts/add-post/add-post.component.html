@@ -1,7 +1,7 @@
 <div class="row">
   <div class=" offset-2 col-8">
     <div class="h1 ">Add Post</div>
-    <form [formGroup]="this.postForm" (ngSubmit)="this.AddPost()">
+    <form [formGroup]="this.postForm" (ngSubmit)="this.onAddPost()">
       <div class="mb-3">
         <label>Title</label>
         <input type="text" formControlName="title" class="form-control">
