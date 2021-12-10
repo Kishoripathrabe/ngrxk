@@ -33,7 +33,7 @@ import { appReducer } from './store/app.state'
     FormsModule,
     AppRoutingModule,
      //@ts-ignore
-    StoreModule.forRoot(appReducer),
+    StoreModule.forRoot(AppState),
     StoreDevtoolsModule.instrument({logOnly:environment.production})
   ],
   providers: [],

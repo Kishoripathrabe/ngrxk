@@ -1,3 +1,4 @@
+import { AppState } from 'src/app/store/app.state';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -13,7 +14,7 @@ import { CounterState } from '../state/counter.state';
 export class CounterinputComponent implements OnInit {
 value:number=0;
 channelName$:Observable<String>;
-  constructor(private store:Store<{counter:CounterState}>) { }
+  constructor(private store:Store<AppState>) { }
   ngOnInit(): void {
     this.channelName$ =this.store.select(getChannelName)
   }
