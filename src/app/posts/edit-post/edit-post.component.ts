@@ -6,6 +6,7 @@ import { AppState } from 'src/app/store/app.state';
 import { Store } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import { getPostById } from '../state/posts.selectors';
+import { updatePost } from '../state/posts.action';
 
 @Component({
   selector: 'app-edit-post',
@@ -34,6 +35,16 @@ export class EditPostComponent implements OnInit {
     })
   }
   onUpdatePost() {
-    alert("hello");
+   if(!this.postForm.valid){
+     return;
+   }
+   const title = this.postForm.value.title;
+   const description = this.postForm.value.description;
+   const post: Post={
+     id:this.post.id,
+     title,
+     description
+   }
+   this.store.dispatch(updatePost({post}));
   }
 }
