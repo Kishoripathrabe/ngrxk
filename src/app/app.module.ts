@@ -18,6 +18,8 @@ import { environment } from 'src/environments/environment';
 import { appReducer } from './store/app.state';
 import { AddPostComponent } from './posts/add-post/add-post.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component'
+import { EffectsModule } from '@ngrx/effects';
+import {  HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,9 @@ import { EditPostComponent } from './posts/edit-post/edit-post.component'
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
+    EffectsModule.forRoot([]),
     AppRoutingModule,
      //@ts-ignore
     StoreModule.forRoot({}),
