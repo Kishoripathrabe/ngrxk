@@ -20,11 +20,13 @@ import { AddPostComponent } from './posts/add-post/add-post.component';
 import { EditPostComponent } from './posts/edit-post/edit-post.component'
 import { EffectsModule } from '@ngrx/effects';
 import {  HttpClientModule } from '@angular/common/http';
+import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,7 @@ import {  HttpClientModule } from '@angular/common/http';
     EffectsModule.forRoot([]),
     AppRoutingModule,
      //@ts-ignore
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({logOnly:environment.production})
   ],
   providers: [],
