@@ -6,7 +6,7 @@ import { AppState } from 'src/app/store/app.state';
 import { Store } from '@ngrx/store';
 import { ActivatedRoute, Router } from '@angular/router';
 import { getPostById } from '../state/posts.selectors';
-import { updatePost } from '../state/posts.action';
+import { updatePost } from '../state/posts.actions';
 
 @Component({
   selector: 'app-edit-post',

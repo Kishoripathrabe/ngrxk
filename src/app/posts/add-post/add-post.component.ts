@@ -1,4 +1,4 @@
-import { addPost } from './../state/posts.action';
+import { addPost } from '../state/posts.actions';
 import { Post } from 'src/app/models/posts.model';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
