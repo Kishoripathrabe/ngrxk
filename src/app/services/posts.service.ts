@@ -12,7 +12,7 @@ export class PostsService {
 
   getPosts(): Observable<Post[]> {
     return this.http
-      .get<Post[]>(`https://vue-completecourse.firebaseio.com/posts.json`)
+      .get<Post[]>(`https://ngrxtrialpractical-default-rtdb.firebaseio.com/posts.json`)
       .pipe(
         map((data) => {
           console.log(data);
@@ -27,7 +27,7 @@ export class PostsService {
   }
   addPost(post: Post): Observable<{ name: string }> {
     return this.http.post<{ name: string }>(
-      `https://vue-completecourse.firebaseio.com/posts.json`,
+      `https://ngrxtrialpractical-default-rtdb.firebaseio.com/posts.json`,
       post
     );
   }
@@ -37,13 +37,13 @@ export class PostsService {
       [post.id]: { title: post.title, description: post.description },
     };
     return this.http.patch(
-      `https://vue-completecourse.firebaseio.com/posts.json`,
+      `https://ngrxtrialpractical-default-rtdb.firebaseio.com/posts.json`,
       postData
     );
   }
   deletePost(id: string) {
     return this.http.delete(
-      `https://vue-completecourse.firebaseio.com/posts/${id}.json`
+      `https://ngrxtrialpractical-default-rtdb.firebaseio.com/posts/${id}.json`
     );
   }
 }
