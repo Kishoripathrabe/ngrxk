@@ -1,3 +1,4 @@
+
 import { Post } from './../models/posts.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -23,5 +24,11 @@ export class PostsService {
           return posts;
         })
       );
+  }
+  addPost(post: Post): Observable<{ name: string }> {
+    return this.http.post<{ name: string }>(
+      `https://vue-completecourse.firebaseio.com/posts.json`,
+      post
+    );
   }
 }
